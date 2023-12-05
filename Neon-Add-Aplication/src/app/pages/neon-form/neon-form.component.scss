@@ -1,0 +1,43 @@
+@use "../../../styles.scss"as s;
+.neon-add{
+    
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        padding: 2rem 2rem;
+        grid-template-areas: 
+                "title title title"
+                "addText addText custom" 
+                "showText showText  submit"
+    
+    
+                ;
+        &__title{
+                    text-align: center;
+                    grid-area: title;
+                    font-family: s.$font-family;
+                    background-color: blue;
+                    
+                }
+     
+           
+            
+            &__addText{
+                grid-area: addText;
+                background-color: aqua;
+            }
+            &__custom{
+                grid-area: custom;
+               background-color: blueviolet;
+            }
+            &__submit{
+                grid-area: submit;
+                background-color: yellow;
+            }
+            &__showText{
+                grid-area: showText;
+                background-color: red;
+            }
+        
+    
+}

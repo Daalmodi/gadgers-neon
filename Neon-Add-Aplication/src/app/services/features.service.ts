@@ -13,7 +13,7 @@ export class FeaturesService {
 
   setFonts(font: string): void {
     this.fontsSubject.next(font);
-    console.log(font);
+    
     
   }
 }

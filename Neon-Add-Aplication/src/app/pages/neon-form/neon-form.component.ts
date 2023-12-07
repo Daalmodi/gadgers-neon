@@ -31,10 +31,6 @@ export class NeonFormComponent implements OnInit {
     });
   }
 
-
-
-
-
 onSubmit(){
 console.log("Elemento enviado");
 console.log(this.userInput.text);

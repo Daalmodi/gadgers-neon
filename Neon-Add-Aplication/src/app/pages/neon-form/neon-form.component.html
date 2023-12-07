@@ -3,13 +3,25 @@
     <form (ngSubmit)="onSubmit()" class="neon-add">
         <h1 class="neon-add__title">Custom your neon add</h1>
         <div class="neon-add__addText">
-            <input type="text">
+            <input type="text" [(ngModel)]="userInput.text" [ngModelOptions]="{standalone: true}" placeholder="WRITE YOUR TEXT . . .">
         </div>
         <div class="neon-add__custom">
-            Aqui va un componenete 
+            <app-custom-neon></app-custom-neon>
         </div>
         <div class="neon-add__showText">
-            Show text
+            @if(userInput.text == ''){
+                <div>
+                    <h1 [ngStyle]="fontStyle">Neon add</h1>
+                </div>
+            }@else {
+                <div>
+                    <h1  [ngStyle]="fontStyle">
+                        {{userInput.text}}
+                    </h1>
+                </div>
+                
+            }
+            
         </div>
         <div class="neon-add__submit">
             

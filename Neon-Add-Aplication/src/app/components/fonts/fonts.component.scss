@@ -1,0 +1,18 @@
+@use"../../../styles.scss"as s;
+
+span{
+    
+    display: block;
+    height: 40px;
+    width: 100%;
+    cursor:pointer;
+    font-size: 25px;
+    border-top:1px solid s.$border-header ;
+
+}
+.pacifico{
+    font-family: s.$font-pacifico;
+}
+.monserat{
+    font-family: s.$font-family;
+}

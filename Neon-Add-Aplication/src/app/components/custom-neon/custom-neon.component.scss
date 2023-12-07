@@ -1,0 +1,29 @@
+@use'../../../styles.scss'as s;
+.custom-neon{
+    display: flex;
+    border: 2px solid s.$border-header;
+    background-color: s.$bg-header;
+    font-family:s.$font-family;
+    span{
+        text-align: center;
+        height: 40px;
+        width: 70px;
+        padding-top: 9px;
+        cursor: pointer;
+        
+        &.selected {
+            border-bottom: 3px solid red;
+            border-image: s.$bg-main;
+            border-image-slice: 1;
+            
+          }
+    }
+    &__components{
+        border: 1px solid s.$border-header;
+        background-color: s.$white;
+        font-family:s.$font-family;
+        text-align: center;
+        
+        
+    }
+}

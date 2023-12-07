@@ -2,41 +2,94 @@
 .neon-add{
     
         width: 100vw;
-        height: 100vh;
+        
         display: grid;
         padding: 2rem 2rem;
         grid-template-areas: 
                 "title title title"
-                "addText addText custom" 
-                "showText showText  submit"
-    
-    
+                "addText custom custom" 
+                "showText  null  submit"
                 ;
         &__title{
                     text-align: center;
                     grid-area: title;
                     font-family: s.$font-family;
-                    background-color: blue;
-                    
+                    background-image: s.$bg-main;
+                    height: 100px;
+                    margin-bottom: 60px;
+                    border-radius: 8px;
+                    color: s.$white;
+                    padding-top:30px ;
+                    box-shadow: s.$shadow-main;
                 }
      
            
             
             &__addText{
+                align-content: center;
+                justify-content: center;
+                text-align: center;
                 grid-area: addText;
-                background-color: aqua;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                input{
+                    text-align: center;
+                    width: 100%;
+                    height: 300px;
+                    font-family: s.$font-family;
+                    font-size: 30px;
+                    font-weight: 700;
+                    padding: 40px 50px; 
+                }
+               
             }
             &__custom{
                 grid-area: custom;
-               background-color: blueviolet;
-            }
-            &__submit{
-                grid-area: submit;
-                background-color: yellow;
+               background-color: s.$white;
+               
             }
             &__showText{
                 grid-area: showText;
-                background-color: red;
+                margin-right: 20px;
+                div{
+                    margin:auto;
+                    background-color: black;
+                    border: 2px solid s.$white;
+                    box-shadow: inset 0 0 5px red,0 0 10px red;
+                    border-radius: 60px; 
+                    color: white;
+                    max-width: 700px;
+                    text-align: center;
+                    padding: 20px;
+                    h1{
+                        margin: 0;
+                        font-size: 50px;
+                        text-shadow: 0 0 15px red, 0 0 30px red,0 0 50px red ;
+                        
+                        
+                    }
+                    
+                }
+            }
+            &__submit{
+                grid-area: submit;
+                
+                
+                
+                button{
+                    cursor: pointer;
+                    box-shadow:s.$shadow-submit;
+                    height: 80px;
+                    width: 100%;
+                    margin: 0;
+                    font-family: s.$font-family;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: s.$white;
+                    background-image: s.$bg-main;
+                    border-radius: 20px;
+                    border: 0;
+                }
             }
         
     

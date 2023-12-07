@@ -1,5 +1,9 @@
-
+//Monserat
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// PACIFICO
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
 
 *{
     margin: 0;
@@ -8,7 +12,18 @@
 }
 //fonts
 $font-family: 'Montserrat', sans-serif;
-//colors
-$bg-main:linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+$font-pacifico: 'Pacifico', cursive ;
 
+$font-type:'monserat';
+
+//colors
+$gradient-start:rgba(131,58,180,1)0%;
+$gradient-middle:rgba(253,29,29,1)50%;
+$gradient-end:rgba(252,176,69,1) 100%;
+$bg-main:linear-gradient(135deg, $gradient-start , $gradient-middle, $gradient-end);
+$bg-header:#ecebebe2;
+$border-header:#bdbaba8d;
 $white:white;
+//shadows
+$shadow-main: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+$shadow-submit: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

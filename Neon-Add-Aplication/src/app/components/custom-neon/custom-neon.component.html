@@ -1,0 +1,22 @@
+<div class="custom-neon">
+    <span (click)="showInformation('Fonts')" [class.selected]="selectOption === 'Fonts'">Fonts</span>
+    <span  (click)="showInformation('Colors')" [class.selected]="selectOption === 'Colors'">Colors</span>
+    <span (click)="showInformation('Size')" [class.selected]="selectOption === 'Size'">Size</span>
+</div>
+<div class="custom-neon__components">
+    @switch (selectOption) {
+        @case ('Fonts') {
+            <app-fonts></app-fonts>
+        }
+        @case ('Colors') {
+            <app-colors></app-colors>
+        }
+        @case ('Size') {
+            <app-size></app-size>
+        }
+        @default {
+            <app-fonts></app-fonts>
+        }
+    
+    }
+</div>

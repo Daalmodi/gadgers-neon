@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FeaturesService } from '../../services/features.service';
 @Component({
   selector: 'app-fonts',
   standalone: true,
@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './fonts.component.scss'
 })
 export class FontsComponent {
-  
-
+  constructor(public featuresService:FeaturesService){}
+fontChange(font:string): void{
+  this.featuresService.setFonts(font);
+}
 }

@@ -28,6 +28,12 @@ export class NeonFormComponent implements OnInit {
       if(font === 'montserrat'){
         this.fontStyle['font-family']="'Montserrat', sans-serif";
       }
+      if(font === 'caveat'){
+        this.fontStyle['font-family']="'Caveat', cursive";
+      }
+      if(font === 'orbitron'){
+        this.fontStyle['font-family']="'Orbitron', sans-serif";
+      }
     });
   }
 

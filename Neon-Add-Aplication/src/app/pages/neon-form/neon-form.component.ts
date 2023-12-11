@@ -16,11 +16,14 @@ export class NeonFormComponent implements OnInit {
   userInput:NeonText = { text: '' };
 
   constructor(public featuresService:FeaturesService){}
-
+//fontStyle
   fontStyle:Record<string,string>={
     'font-family':"'Montserrat', sans-serif",
+    'text-shadow': '0 0 15px red, 0 0 30px red,0 0 50px red',
    };
-  ngOnInit(): void {
+
+
+   changeFonts(): void{
     this.featuresService.getFonts().subscribe(font => {
       if(font === 'pacifico'){
         this.fontStyle['font-family']="'Pacifico', cursive";
@@ -35,6 +38,29 @@ export class NeonFormComponent implements OnInit {
         this.fontStyle['font-family']="'Orbitron', sans-serif";
       }
     });
+   }
+
+
+changeColor(): void {
+ this.featuresService.getColors().subscribe(color => {
+      if(color === 'red'){
+        this.fontStyle['text-shadow']="0 0 15px red, 0 0 30px red,0 0 50px red";
+        
+        
+      }
+      if(color === 'blue'){
+        this.fontStyle['text-shadow']="0 0 15px blue, 0 0 30px blue,0 0 50px blue";
+      }
+      if(color === 'orange'){
+        this.fontStyle['text-shadow']="0 0 15px orange, 0 0 30px orange,0 0 50px orange";
+      }
+
+    });
+}
+
+  ngOnInit(): void {
+    this.changeFonts();
+    this.changeColor();
   }
 
 onSubmit(){

@@ -20,8 +20,11 @@ export class NeonFormComponent implements OnInit {
   fontStyle:Record<string,string>={
     'font-family':"'Montserrat', sans-serif",
     'text-shadow': '0 0 15px red, 0 0 30px red,0 0 50px red',
+    
    };
-
+   boxStyle:Record<string,string>={
+    'box-shadow': 'inset 0 0 5px red,0 0 10px red',
+   }
 
    changeFonts(): void{
     this.featuresService.getFonts().subscribe(font => {
@@ -45,14 +48,16 @@ changeColor(): void {
  this.featuresService.getColors().subscribe(color => {
       if(color === 'red'){
         this.fontStyle['text-shadow']="0 0 15px red, 0 0 30px red,0 0 50px red";
-        
+        this.boxStyle['box-shadow']="inset 0 0 5px red,0 0 10px red";
         
       }
       if(color === 'blue'){
         this.fontStyle['text-shadow']="0 0 15px blue, 0 0 30px blue,0 0 50px blue";
+        this.boxStyle['box-shadow']="inset 0 0 5px blue,0 0 10px blue";
       }
       if(color === 'orange'){
         this.fontStyle['text-shadow']="0 0 15px orange, 0 0 30px orange,0 0 50px orange";
+        this.boxStyle['box-shadow']="inset 0 0 5px orange,0 0 10px orange";
       }
 
     });

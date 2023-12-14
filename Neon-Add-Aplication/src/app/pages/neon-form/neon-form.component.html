@@ -8,13 +8,13 @@
         <div class="neon-add__custom">
             <app-custom-neon></app-custom-neon>
         </div>
-        <div class="neon-add__showText">
+        <div class="neon-add__showText" >
             @if(userInput.text == ''){
-                <div>
+                <div [ngStyle]="boxStyle">
                     <h1 [ngStyle]="fontStyle" >Neon add</h1>
                 </div>
             }@else {
-                <div>
+                <div [ngStyle]="boxStyle">
                     <h1  [ngStyle]="fontStyle" >
                         {{userInput.text}}
                     </h1>

@@ -1,0 +1,28 @@
+@use"../../../styles.scss"as s;
+
+.size-container{
+    max-width: 100%;
+    justify-content: center;
+    align-content: center;
+    height: 40px;
+  
+    position: relative;
+    cursor:pointer;
+    span{
+        height: 30px;
+        width: 50%;
+        display: block;
+        
+        font-size: 25px;
+        border-radius: 20px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    &.selected{
+        border-bottom: 3px solid red;
+        border-image: s.$bg-main;
+        border-image-slice: 1;
+    }
+}

@@ -1,10 +1,11 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { RouterOutlet,RouterLink} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NeonText } from '../../models/neonText.model';
 import { FormsModule } from '@angular/forms';
 import { CustomNeonComponent } from '../../components/custom-neon/custom-neon.component';
 import {FeaturesService} from '../../services/features.service';
+import { setThrowInvalidWriteToSignalError } from '@angular/core/primitives/signals';
 @Component({
   selector: 'app-neon-form',
   standalone: true,
@@ -14,6 +15,15 @@ import {FeaturesService} from '../../services/features.service';
 })
 export class NeonFormComponent implements OnInit {
   userInput:NeonText = { text: '' };
+// list of form 
+userCustom ={
+  userinput:'',
+  userfont:'',
+  usercolor:'',
+  usersize:'',
+}
+
+  
 
   constructor(public featuresService:FeaturesService){}
 //fontStyle
@@ -40,6 +50,7 @@ export class NeonFormComponent implements OnInit {
       if(font === 'orbitron'){
         this.fontStyle['font-family']="'Orbitron', sans-serif";
       }
+      this.userCustom.userfont=font;
     });
    }
 
@@ -59,18 +70,41 @@ changeColor(): void {
         this.fontStyle['text-shadow']="0 0 15px orange, 0 0 30px orange,0 0 50px orange";
         this.boxStyle['box-shadow']="inset 0 0 5px orange,0 0 10px orange";
       }
-
+      this.userCustom.usercolor=color;
     });
+}
+
+changeSize():void {
+  this.featuresService.getSize().subscribe(size =>{
+    if(size === 'small'){
+      console.log('small');
+    }
+    if(size === 'medium'){
+      console.log("medium");
+    }
+    if(size === 'large'){
+      console.log("large");
+    }
+    this.userCustom.usersize=size;
+  });
 }
 
   ngOnInit(): void {
     this.changeFonts();
     this.changeColor();
+    this.changeSize();
   }
 
 onSubmit(){
-console.log("Elemento enviado");
+
+this.userCustom.userinput=this.userInput.text;
+
+
+
+console.log(this.userCustom);
+
 console.log(this.userInput.text);
+
 
 // 
 }

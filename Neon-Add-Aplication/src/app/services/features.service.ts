@@ -6,9 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class FeaturesService {
   private fontsSubject: BehaviorSubject<string> = new BehaviorSubject<string>('pacifico');
   private colorSubject: BehaviorSubject<string> = new BehaviorSubject<string>('red');
+  private sizeSubject:BehaviorSubject<string> = new BehaviorSubject<string>('small');
 
-  // constructor() { }
-  // fonts:string ='pacifico';
   getFonts(): Observable<string> {
     return this.fontsSubject.asObservable();
   }
@@ -24,6 +23,13 @@ export class FeaturesService {
   setColors(color:string):void {
     this.colorSubject.next(color);
     
-    
   }
+
+  getSize():Observable<string>{
+    return this.sizeSubject.asObservable();
+  }
+  setSize(size:string):void {
+    this.sizeSubject.next(size);
+  }
+  
 }

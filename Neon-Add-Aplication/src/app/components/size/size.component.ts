@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FeaturesService } from '../../services/features.service';
 
 @Component({
   selector: 'app-size',
@@ -8,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './size.component.scss'
 })
 export class SizeComponent {
+  constructor(public featuresService:FeaturesService){}
+  selectSize:string="";
+  
 
+sizePrint(option:string): void {
+  
+  this.selectSize=option;
+  this.featuresService.setSize(option);
+  
+  
+}
 }

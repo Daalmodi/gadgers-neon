@@ -3,7 +3,10 @@
     <form (ngSubmit)="onSubmit()" class="neon-add">
         <h1 class="neon-add__title">Custom your neon add</h1>
         <div class="neon-add__addText">
-            <input type="text" [(ngModel)]="userInput.text" [ngModelOptions]="{standalone: true}" placeholder="WRITE YOUR TEXT . . .">
+            <input type="text" [(ngModel)]="userInput.text" [ngModelOptions]="{standalone: true}" placeholder="WRITE YOUR TEXT . . ." name="userInput" required #Input="ngModel">
+            <div class="error-alert"[hidden]="Input.valid || Input.pristine">
+                Your text is required
+            </div>
         </div>
         <div class="neon-add__custom">
             <app-custom-neon></app-custom-neon>
@@ -25,8 +28,10 @@
         </div>
         <div class="neon-add__submit">
             
-            <button type="submit">Submit</button>
+            <button type="submit" [disabled]="!Input.valid">Submit</button>
         </div>
+        
     </form>
+
 </div>
 

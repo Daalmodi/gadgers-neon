@@ -1,1 +1,9 @@
-<p>size works!</p>
+<div class="size-container"(click)="sizePrint('small')"[class.selected]="selectSize === 'small'">
+    <span>Small</span>
+</div>
+<div class="size-container" (click)="sizePrint('medium')"[class.selected]="selectSize === 'medium'">
+    <span>Medium</span>
+</div>
+<div class="size-container" (click)="sizePrint('large')"[class.selected]="selectSize === 'large'">
+    <span>Large</span>
+</div>

@@ -1,0 +1,21 @@
+
+<form class="contact-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <h1 class="contact-form__title">
+        Contact Form 
+    </h1>
+    <div class="contact-form__null1"></div>
+    <div class="contact-form__inputs">
+        <label for="userName">Full Name</label>
+        <input type="text" formControlName="userName">
+        <label for="userLastName">Last Name</label>
+        <input type="text" formControlName="userLastName">
+        <label for="userEmail">Email Address</label>
+        <input type="email" formControlName="userEmail">
+        <label for="userPhone">Phone</label>
+        <input type="text" formControlName="userPhone">
+    </div>
+    <div class="contact-form__null2"></div>
+    <div class="contact-form__submit">
+        <button type="submit" [disabled]="!myForm.valid">Submit</button>
+    </div>
+</form>

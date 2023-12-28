@@ -5,7 +5,7 @@ import { NeonText } from '../../models/neonText.model';
 import { FormsModule } from '@angular/forms';
 import { CustomNeonComponent } from '../../components/custom-neon/custom-neon.component';
 import {FeaturesService} from '../../services/features.service';
-import { setThrowInvalidWriteToSignalError } from '@angular/core/primitives/signals';
+
 @Component({
   selector: 'app-neon-form',
   standalone: true,
@@ -98,20 +98,7 @@ changeSize():void {
 onSubmit(){
 
 this.userCustom.userinput=this.userInput.text;
-
-
-
 console.log(this.userCustom);
-
 console.log(this.userInput.text);
-
-
-// 
 }
-
-
-
-
-
-
 }

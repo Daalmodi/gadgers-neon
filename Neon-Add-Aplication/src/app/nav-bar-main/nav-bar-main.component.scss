@@ -1,0 +1,21 @@
+@use "../../styles.scss" as s;
+.nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: s.$black;
+    color:s.$white;
+    display: flex;
+    padding: 0 16px;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+    .menu{
+        font-family: s.$font-pacifico;
+        display: flex;
+        justify-content: space-between;
+        div{
+            padding: 20px;
+        }
+    }
+}
